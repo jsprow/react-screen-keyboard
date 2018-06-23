@@ -60,8 +60,10 @@
     "webpack": "1.13.1"
   },
   "dependencies": {
+    "css-loader": "~0.23.1",
     "css-modules-require-hook": "~4.0.1",
-    "style-loader": "~0.13.1",
-    "css-loader": "~0.23.1"
+    "emotion": "^9.2.4",
+    "react-emotion": "^9.2.4",
+    "style-loader": "~0.13.1"
   }
 }
