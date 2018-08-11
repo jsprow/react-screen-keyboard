@@ -17,11 +17,13 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 import './Keyboard.css';
 
 const StyledKeyboard = styled('div')`
+  width: ${props => (props.layout === 'numeric' ? 'auto' : '100%')};
   max-width: 57em;
   margin: 0 auto;
   background: #333;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);
-  font-size: 18px;
+  font-size: ${props => (props.layout === 'numeric' ? '28px' : '20px')};
+  border-radius: 5px;
 `;
 
 export default class Keyboard extends PureComponent {
@@ -177,7 +179,7 @@ export default class Keyboard extends PureComponent {
     const keys = NumericLayout.layout;
     const { leftButtons, rightButtons } = this.props;
     return (
-      <StyledKeyboard className="keyboard numeric-keyboard">
+      <StyledKeyboard layout="numeric" className="keyboard numeric-keyboard">
         {keys.map((row, i) => (
           <div className="keyboard-row" key={`row-${i}`}>
             {row.map(button => (
